@@ -80,4 +80,13 @@ class RestaurantTest {
         selectedMenu.add(item2);
         selectedMenu.add(item3);
     }
+
+    @Test
+    public void adding_item_to_menu_should_display_bill() {
+
+        List<Item> menu = restaurant.getMenu();
+        int totalPrice = 388;
+        int actualTotalPrice = restaurant.displaybill(menu);
+        assertEquals(totalPrice, actualTotalPrice);
+    }
 }
